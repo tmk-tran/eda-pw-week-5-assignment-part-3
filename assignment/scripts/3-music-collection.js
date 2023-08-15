@@ -30,6 +30,9 @@ console.log( album5 );
 let album6 = addToCollection( 'Scary Monsters and Nice Sprites', 'Skrillex', 2010 );
 console.log( album6 );
 
+let album7 = addToCollection( 'Meteora', 'Linkin Park', 2003 );
+console.log( album7 );  // added another album to have multiple albums by same artist
+
 console.log( collection );  // printing the contents of the current collection
 
 
@@ -53,7 +56,18 @@ function findByArtist( artist ) {
             results.push(album);
         }
     }
+    if( results.length === 0 ) {
+        console.log( 'No albums are found for this artist: ', artist );
+    }
     return results;
 }
 
+let artist1 = findByArtist( 'Skrillex' );  // testing artist known to be in array
+console.log( 'Albums by artist 1: ', artist1 );
+
+let artist2 = findByArtist( 'Taylor Swift' );  //  shouldn't have this artist in collection, testing in console
+console.log( 'Albums by artist 2: ', artist2 );  // this should be an empty array
+
+let artist3 = findByArtist( 'Linkin Park' );  // testing multiple albums by same artist
+console.log( 'Albums by artist 3: ', artist3 );
 
