@@ -1,8 +1,8 @@
 console.log('***** Music Collection *****')
 
-let collection = [];
+let collection = [];  // empty array for now
 
-function addToCollection( title, artist, yearPublished ) {
+function addToCollection( title, artist, yearPublished ) {  // function to add album to collection
     const newAlbum = {
         title: title,
         artist: artist,
@@ -30,11 +30,11 @@ console.log( album5 );
 let album6 = addToCollection( 'Scary Monsters and Nice Sprites', 'Skrillex', 2010 );
 console.log( album6 );
 
-console.log( collection );
+console.log( collection );  // printing the contents of the current collection
 
 
 
-function showCollection( collection ) {
+function showCollection( collection ) {  // function to display current collection info
     console.log( 'The number of items in the collection is: ', collection.length );
 
     for( let album of collection ) {
@@ -42,5 +42,18 @@ function showCollection( collection ) {
     }
 }
 
-showCollection( collection );
+showCollection( collection );  // testing the showCollection function
+
+
+function findByArtist( artist ) {
+    const results = [];
+
+    for( album of collection ) {
+        if( album.artist === artist) {
+            results.push(album);
+        }
+    }
+    return results;
+}
+
 
