@@ -58,18 +58,17 @@ function findByArtist( artist ) {
     }
     if( results.length === 0 ) {
         console.log( 'No albums are found for this artist: ', artist );
+    } else {
+        console.log( 'Albums by ' + results[0].artist + ': ' + results.length, results )
     }
     return results;
 }
 
 let artist1 = findByArtist( 'Skrillex' );  // testing artist known to be in array
-console.log( 'Albums by artist 1: ', artist1 );
 
 let artist2 = findByArtist( 'Taylor Swift' );  //  shouldn't have this artist in collection, testing in console
-console.log( 'Albums by artist 2: ', artist2 );  // this should be an empty array
 
 let artist3 = findByArtist( 'Linkin Park' );  // testing multiple albums by same artist
-console.log( 'Albums by artist 3: ', artist3 );
 
 
 // START HERE TO FINISH ASSIGNMENT
