@@ -71,3 +71,5 @@ console.log( 'Albums by artist 2: ', artist2 );  // this should be an empty arra
 let artist3 = findByArtist( 'Linkin Park' );  // testing multiple albums by same artist
 console.log( 'Albums by artist 3: ', artist3 );
 
+
+function search( )
