@@ -48,6 +48,7 @@ function showCollection( collection ) {  // function to display current collecti
 showCollection( collection );  // testing the showCollection function
 
 
+
 function findByArtist( artist ) {
     const results = [];
 
@@ -64,6 +65,7 @@ function findByArtist( artist ) {
     return results;
 }
 
+
 let artist1 = findByArtist( 'Skrillex' );  // testing artist known to be in array
 
 let artist2 = findByArtist( 'Taylor Swift' );  //  shouldn't have this artist in collection, testing in console
@@ -71,5 +73,27 @@ let artist2 = findByArtist( 'Taylor Swift' );  //  shouldn't have this artist in
 let artist3 = findByArtist( 'Linkin Park' );  // testing multiple albums by same artist
 
 
+
 // START HERE TO FINISH ASSIGNMENT
-// function search( )
+function search( searchInput ) {
+    if( !searchInput || Object.keys(searchInput).length === 0 ) {
+        return collection;
+    }
+    
+    const searchResults = [];
+
+    for( album of collection ) {
+        let matchesCriteria = true;
+
+        for( key in searchInput ) {
+            if( album[key] !== searchInput[key] ) {
+                matchesCriteria = false;
+                break;  // no need to check further if one doesn't match
+            }
+        }
+        if( matchesCriteria ) {
+            results.push(album);
+        }
+    }
+    return results;
+}
