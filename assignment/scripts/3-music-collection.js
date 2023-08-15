@@ -56,10 +56,10 @@ function findByArtist( artist ) {
             results.push(album);
         }
     }
-    if( results.length === 0 ) {
-        console.log( 'No albums are found for this artist: ', artist );
+    if( results.length === 0 ) {  // if artist is not found, 
+        console.log( 'No albums are found for this artist: ', artist ); // log this message and artist name
     } else {
-        console.log( 'Albums by ' + results[0].artist + ': ' + results.length, results )
+        console.log( 'Albums by ' + results[0].artist + ': ' + results.length, results )  // otherwise: list the name of the artist, the number of albums, and print the array(s) to console
     }
     return results;
 }
