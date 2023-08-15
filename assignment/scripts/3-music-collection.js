@@ -72,4 +72,5 @@ let artist3 = findByArtist( 'Linkin Park' );  // testing multiple albums by same
 console.log( 'Albums by artist 3: ', artist3 );
 
 
+// START HERE TO FINISH ASSIGNMENT
 // function search( )
