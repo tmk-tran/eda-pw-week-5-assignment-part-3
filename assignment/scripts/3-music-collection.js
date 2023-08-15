@@ -75,25 +75,34 @@ let artist3 = findByArtist( 'Linkin Park' );  // testing multiple albums by same
 
 
 // START HERE TO FINISH ASSIGNMENT
-function search( searchInput ) {
-    if( !searchInput || Object.keys(searchInput).length === 0 ) {
-        return collection;
-    }
-    
+function search( searchInput ) {  // function called search that takes an input
+  
     const searchResults = [];
 
-    for( album of collection ) {
+    for( let album of collection ) {
         let matchesCriteria = true;
 
-        for( key in searchInput ) {
-            if( album[key] !== searchInput[key] ) {
+        for( let property in searchInput ) {
+            if( album[property] !== searchInput[property] ) {
                 matchesCriteria = false;
                 break;  // no need to check further if one doesn't match
             }
         }
         if( matchesCriteria ) {
-            results.push(album);
+            searchResults.push(album);
         }
+    } 
+    if( searchResults.length === 0 ) {
+        console.log( 'No albums found matching the search criteria ', searchInput );
     }
-    return results;
+    
+    return searchResults;
 }
+
+let searchInput = { artist: 'Ray Charles', yearPublished: 1957 };  // testing 'search' with info from README
+let searchResults1 = search( searchInput );  // should display message about no albums found
+console.log( searchResults1 );  // should display an empty array
+
+let searchInput2 = { artist: 'Pink Floyd', yearPublished: 1973 };  // testing with an artist known to be in collection
+let searchResults2 = search( searchInput2 );
+console.log( searchResults2 );  // should have a Pink Floyd album in array 
