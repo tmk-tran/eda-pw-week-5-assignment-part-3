@@ -31,3 +31,16 @@ let album6 = addToCollection( 'Scary Monsters and Nice Sprites', 'Skrillex', 201
 console.log( album6 );
 
 console.log( collection );
+
+
+
+function showCollection( collection ) {
+    console.log( 'The number of items in the collection is: ', collection.length );
+
+    for( let album of collection ) {
+        console.log( album.title + ', by ' + album.artist + '. Published in ' + album.yearPublished )
+    }
+}
+
+showCollection( collection );
+
