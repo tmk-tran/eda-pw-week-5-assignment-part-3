@@ -113,6 +113,9 @@ let searchInput2 = { artist: 'Pink Floyd', yearPublished: 1973 };  // testing wi
 let searchResults2 = search( searchInput2 );
 console.log( 'The album info is: ', searchResults2 );  // should have a Pink Floyd album in array 
 
-let searchInput3 = {};
+let searchInput3 = {};  // testing with an empty search input
 let searchResults3 = search( searchInput3 );
-console.log( 'The album info is: ', searchResults3 );
+console.log( 'The album info is: ', searchResults3 );  // should print the collection in console
+
+let searchResults4 = search();  // testing empty search object
+console.log( 'The album info is: ', searchResults4)  // should print the collection in console
