@@ -2,17 +2,26 @@ console.log('***** Music Collection *****')
 
 let collection = [];  // empty array for now
 
-function addToCollection( title, artist, yearPublished ) {  // function to add album to collection
+function addToCollection( title, artist, yearPublished, tracks ) {  // function to add album to collection, updated to accept 'tracks'
     const newAlbum = {
         title: title,
         artist: artist,
-        yearPublished: yearPublished
+        yearPublished: yearPublished,
+        tracks: tracks || []  // use provided tracks array, or initialize an empty array
     };
     collection.push(newAlbum);
     return newAlbum;
 }
 
-let album1 = addToCollection( 'Hybrid Theory', 'Linkin Park', 2000 );
+let album1 = addToCollection(
+    'Hybrid Theory',
+    'Linkin Park',
+    2000,
+    [
+        { name: 'Papercut', duration: '3:04' },
+        { name: 'Points of Authority', duration: '3:20' }
+    ]
+    );
 console.log( 'Album 1: ', album1 );
 
 let album2 = addToCollection( 'Enter the Wu-Tang', 'Wu-Tang Clan', 1993 );
@@ -30,7 +39,14 @@ console.log( 'Album 5: ', album5 );
 let album6 = addToCollection( 'Scary Monsters and Nice Sprites', 'Skrillex', 2010 );
 console.log( 'Album 6: ', album6 );
 
-let album7 = addToCollection( 'Meteora', 'Linkin Park', 2003 );
+let album7 = addToCollection(
+    'Meteora',
+    'Linkin Park',
+    2003,
+    [
+        { name: 'Faint', duration: '2:42' }
+    ]
+    );
 console.log( 'Album 7 (extra): ', album7 );  // added another album to have multiple albums by same artist
 
 console.log( 'The collection array contains: ', collection );  // printing the contents of the current collection
@@ -81,20 +97,33 @@ function search( searchInput ) {  // function called search that takes an input
     if( !searchInput || Object.keys(searchInput).length === 0 ) {
         return collection;
     }
-
-    for( let album of collection ) {
-        let matchesCriteria = true;
-
-        for( let property in searchInput ) {
-            if( album[property] !== searchInput[property] ) {
-                matchesCriteria = false;
-                break;  // break only if the property doesn't match
+    
+    if( searchInput.trackName ) {  // updating function to include trackName
+        for( let album of collection ) {
+            for( let track of albumTracks ) {
+                if( trackName === searchInput.trackName ) {
+                    searchResults.push(album);
+                    break;  
+                }
             }
         }
-        if( matchesCriteria ) {
-            searchResults.push(album);
-        }
-    } 
+    } else {
+
+        for( let album of collection ) {
+            let matchesCriteria = true;
+
+            for( let property in searchInput ) {
+                if( album[property] !== searchInput[property] ) {
+                    matchesCriteria = false;
+                    break;  // break only if the property doesn't match
+                }
+            }
+            if( matchesCriteria ) {
+                searchResults.push(album);
+            }
+        }   
+    }
+    
     if( searchResults.length === 0 ) {
         console.log( 'No albums found matching the search criteria ', searchInput );  // log message if no album found by artist
         return [];
@@ -123,3 +152,12 @@ console.log( 'Test of empty search object, the collection contains: ', searchRes
 let searchInput5 = { artist: 'Linkin Park', yearPublished: 2000 };  // testing an artist with multiple albums in collection
 let searchResults5 = search( searchInput5 );
 console.log( 'The album info is: ', searchResults5 );
+
+
+
+album2.tracks = [  // here, I wanted to test adding the tracks array using dot notation
+    { name: 'A', duration: '0' },
+    { name: 'B', duration: '0' }
+]
+
+console.log( 'Added some tracks to Album 2: ', album2 );
