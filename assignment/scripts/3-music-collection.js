@@ -78,6 +78,10 @@ function search( searchInput ) {  // function called search that takes an input
   
     const searchResults = [];
 
+    if( Object.keys(searchInput) ) {
+        return collection;
+    }
+
     for( let album of collection ) {
         let matchesCriteria = true;
 
@@ -89,11 +93,12 @@ function search( searchInput ) {  // function called search that takes an input
         }
         if( matchesCriteria ) {
             searchResults.push(album);
-            console.log( 'A match was found: ', searchInput );
         }
     } 
     if( searchResults.length === 0 ) {
         console.log( 'No albums found matching the search criteria ', searchInput );  // log message if no album found by artist
+    } else {
+        console.log( 'A match was found: ', searchInput );
     }
     
     return searchResults;
@@ -107,4 +112,6 @@ let searchInput2 = { artist: 'Pink Floyd', yearPublished: 1973 };  // testing wi
 let searchResults2 = search( searchInput2 );
 console.log( 'The album info is: ', searchResults2 );  // should have a Pink Floyd album in array 
 
-// START HERE TO FINISH ASSIGNMENT
+let searchInput3 = undefined;
+let searchResults3 = search( searchInput3 );
+console.log( 'The result is: ', searchResults3 );
