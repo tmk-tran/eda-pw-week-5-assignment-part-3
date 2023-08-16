@@ -115,10 +115,10 @@ console.log( 'The album info is: ', searchResults2 );  // should have a Pink Flo
 
 let searchInput3 = {};  // testing with an empty search input
 let searchResults3 = search( searchInput3 );
-console.log( 'The album info is: ', searchResults3 );  // should print the collection in console
+console.log( 'Test of empty search input, the collection contains: ', searchResults3 );  // should print the collection in console
 
 let searchResults4 = search();  // testing empty search object
-console.log( 'The album info is: ', searchResults4)  // should print the collection in console
+console.log( 'Test of empty search object, the collection contains: ', searchResults4)  // should print the collection in console
 
 let searchInput5 = { artist: 'Linkin Park', yearPublished: 2000 };  // testing an artist with multiple albums in collection
 let searchResults5 = search( searchInput5 );
