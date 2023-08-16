@@ -177,3 +177,7 @@ console.log( 'Testing search results for an empty input, should log the collecti
 searchInput5 = { trackName: 'With You, Friends' };
 searchResults5 = search( searchInput5 );
 console.log( 'Testing search results with an unknown track, should be an empty array: ', searchResults5 );
+// end tests of updated search function
+
+
+//UPDATE SHOWCOLLECTION FUNCTION PER README INSTRUCTIONS
