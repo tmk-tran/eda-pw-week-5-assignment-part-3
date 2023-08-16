@@ -13,27 +13,27 @@ function addToCollection( title, artist, yearPublished ) {  // function to add a
 }
 
 let album1 = addToCollection( 'Hybrid Theory', 'Linkin Park', 2000 );
-console.log( album1 );
+console.log( 'Album 1: ', album1 );
 
 let album2 = addToCollection( 'Enter the Wu-Tang', 'Wu-Tang Clan', 1993 );
-console.log( album2 );
+console.log( 'Album 2: ', album2 );
 
 let album3 = addToCollection( 'Dark Side of the Moon', 'Pink Floyd', 1973 );
-console.log( album3 );
+console.log( 'Album 3: ', album3 );
 
 let album4 = addToCollection( 'Thriller', 'Michael Jackson', 1983 );
-console.log( album4 );
+console.log( 'Album 4: ', album4 );
 
 let album5 = addToCollection( 'Legend: The Best of Bob Marley & The Wailers', 'Bob Marley', 1984 );
-console.log( album5 );
+console.log( 'Album 5: ', album5 );
 
 let album6 = addToCollection( 'Scary Monsters and Nice Sprites', 'Skrillex', 2010 );
-console.log( album6 );
+console.log( 'Album 6: ', album6 );
 
 let album7 = addToCollection( 'Meteora', 'Linkin Park', 2003 );
-console.log( album7 );  // added another album to have multiple albums by same artist
+console.log( 'Album 7 (extra): ', album7 );  // added another album to have multiple albums by same artist
 
-console.log( collection );  // printing the contents of the current collection
+console.log( 'The collection array contains: ', collection );  // printing the contents of the current collection
 
 
 
@@ -106,3 +106,5 @@ console.log( searchResults1 );  // should display an empty array
 let searchInput2 = { artist: 'Pink Floyd', yearPublished: 1973 };  // testing with an artist known to be in collection
 let searchResults2 = search( searchInput2 );
 console.log( 'The album info is: ', searchResults2 );  // should have a Pink Floyd album in array 
+
+// START HERE TO FINISH ASSIGNMENT
