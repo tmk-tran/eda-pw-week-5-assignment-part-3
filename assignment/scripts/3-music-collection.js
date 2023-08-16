@@ -119,3 +119,7 @@ console.log( 'The album info is: ', searchResults3 );  // should print the colle
 
 let searchResults4 = search();  // testing empty search object
 console.log( 'The album info is: ', searchResults4)  // should print the collection in console
+
+let searchInput5 = { artist: 'Linkin Park', yearPublished: 2000 };  // testing an artist with multiple albums in collection
+let searchResults5 = search( searchInput5 );
+console.log( 'The album info is: ', searchResults5 );
