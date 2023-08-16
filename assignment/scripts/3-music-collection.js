@@ -39,14 +39,7 @@ console.log( 'Album 5: ', album5 );
 let album6 = addToCollection( 'Scary Monsters and Nice Sprites', 'Skrillex', 2010 );
 console.log( 'Album 6: ', album6 );
 
-let album7 = addToCollection(
-    'Meteora',
-    'Linkin Park',
-    2003,
-    [
-        { name: 'Faint', duration: '2:42' }
-    ]
-    );
+let album7 = addToCollection( 'Meteora', 'Linkin Park', 2003 );
 console.log( 'Album 7 (extra): ', album7 );  // added another album to have multiple albums by same artist
 
 console.log( 'The collection array contains: ', collection );  // printing the contents of the current collection
@@ -100,15 +93,14 @@ function search( searchInput ) {  // function called search that takes an input
     
     if( searchInput.trackName ) {  // updating function to include trackName
         for( let album of collection ) {
-            for( let track of albumTracks ) {
-                if( trackName === searchInput.trackName ) {
+            for( let track of album.tracks ) {
+                if( track.name === searchInput.trackName ) {
                     searchResults.push(album);
                     break;  
                 }
             }
         }
     } else {
-
         for( let album of collection ) {
             let matchesCriteria = true;
 
@@ -123,7 +115,7 @@ function search( searchInput ) {  // function called search that takes an input
             }
         }   
     }
-    
+
     if( searchResults.length === 0 ) {
         console.log( 'No albums found matching the search criteria ', searchInput );  // log message if no album found by artist
         return [];
@@ -154,10 +146,22 @@ let searchResults5 = search( searchInput5 );
 console.log( 'The album info is: ', searchResults5 );
 
 
-
-album2.tracks = [  // here, I wanted to test adding the tracks array using dot notation
-    { name: 'A', duration: '0' },
-    { name: 'B', duration: '0' }
+// here, I wanted to test adding the tracks array using dot notation
+album2.tracks = [
+    { name: 'C.R.E.A.M.', duration: '4:12' },
+    { name: 'Wu-Tang: 7th Chamber', duration: '6:05' }
 ]
-
 console.log( 'Added some tracks to Album 2: ', album2 );
+
+
+album7.tracks = [
+    { name: 'Faint', duration: '2:42' }
+]
+console.log( 'Added a track to Album 7: ', album7 );
+// end test adding tracks
+
+
+// start test of updated search function
+searchInput = { trackName: 'C.R.E.A.M.' };
+searchResults1 = search( searchInput );
+console.log( 'Testing search results for track \'C.R.E.A.M.\': ', searchResults1 );
