@@ -78,7 +78,7 @@ function search( searchInput ) {  // function called search that takes an input
   
     const searchResults = [];
 
-    if( Object.keys(searchInput) ) {
+    if( !searchInput || Object.keys(searchInput).length === 0 ) {
         return collection;
     }
 
@@ -88,7 +88,7 @@ function search( searchInput ) {  // function called search that takes an input
         for( let property in searchInput ) {
             if( album[property] !== searchInput[property] ) {
                 matchesCriteria = false;
-                break;  // no need to check further if one doesn't match
+                break;  // break only if the property doesn't match
             }
         }
         if( matchesCriteria ) {
@@ -97,6 +97,7 @@ function search( searchInput ) {  // function called search that takes an input
     } 
     if( searchResults.length === 0 ) {
         console.log( 'No albums found matching the search criteria ', searchInput );  // log message if no album found by artist
+        return [];
     } else {
         console.log( 'A match was found: ', searchInput );
     }
@@ -106,12 +107,12 @@ function search( searchInput ) {  // function called search that takes an input
 
 let searchInput = { artist: 'Ray Charles', yearPublished: 1957 };  // testing 'search' with info from README
 let searchResults1 = search( searchInput );  // should display message about no albums found
-console.log( searchResults1 );  // should display an empty array
+console.log( 'The album info is: ', searchResults1 );  // should display an empty array
 
 let searchInput2 = { artist: 'Pink Floyd', yearPublished: 1973 };  // testing with an artist known to be in collection
 let searchResults2 = search( searchInput2 );
 console.log( 'The album info is: ', searchResults2 );  // should have a Pink Floyd album in array 
 
-let searchInput3 = undefined;
+let searchInput3 = {};
 let searchResults3 = search( searchInput3 );
-console.log( 'The result is: ', searchResults3 );
+console.log( 'The album info is: ', searchResults3 );
