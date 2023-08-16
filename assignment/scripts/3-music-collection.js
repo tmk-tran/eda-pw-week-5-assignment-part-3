@@ -165,3 +165,15 @@ console.log( 'Added a track to Album 7: ', album7 );
 searchInput = { trackName: 'C.R.E.A.M.' };
 searchResults1 = search( searchInput );
 console.log( 'Testing search results for track \'C.R.E.A.M.\': ', searchResults1 );
+
+searchInput2 = { trackName: 'Faint' };
+searchResults2 = search( searchInput2 );
+console.log( 'Testing search results for track \'Faint\': ', searchResults2 );
+
+searchInput3 = {};
+searchResults3 = search( searchInput3 );
+console.log( 'Testing search results for an empty input, should log the collection: ', searchResults3 );
+
+searchInput5 = { trackName: 'With You, Friends' };
+searchResults5 = search( searchInput5 );
+console.log( 'Testing search results with an unknown track, should be an empty array: ', searchResults5 );
