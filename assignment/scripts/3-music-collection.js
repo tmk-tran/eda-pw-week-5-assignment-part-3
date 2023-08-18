@@ -50,7 +50,16 @@ function showCollection( collection ) {  // function to display current collecti
     console.log( 'The number of items in the collection is: ', collection.length );
 
     for( let album of collection ) {
-        console.log( album.title + ', by ' + album.artist + '. Published in ' + album.yearPublished )
+        console.log( album.title + ', by ' + album.artist + '. Published in: ' + album.yearPublished )
+
+        if( album.tracks.length > 0 ) {  // updated to display track information when function called
+        console.log( 'Tracks: ' );
+            for( let track of album.tracks ) {
+                console.log( '- ' + track.name + ', Duration: ' + track.duration );
+            }
+        } else {
+            console.log( 'No tracks available for this album.' );
+        }
     }
 }
 
