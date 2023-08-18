@@ -153,7 +153,7 @@ let searchResults3 = search( searchInput3 );
 console.log( 'Test of empty search input, the collection contains: ', searchResults3 );  // should print the collection in console
 
 let searchResults4 = search();  // testing empty search object
-console.log( 'Test of empty search object, the collection contains: ', searchResults4)  // should print the collection in console
+console.log( 'Test of empty search object, the collection contains: ', searchResults4 )  // should print the collection in console
 
 let searchInput5 = { artist: 'Linkin Park', yearPublished: 2000 };  // testing an artist with multiple albums in collection
 let searchResults5 = search( searchInput5 );
@@ -186,14 +186,12 @@ searchInput2 = { trackName: 'Faint' };
 searchResults2 = search( searchInput2 );
 console.log( 'Testing search results for track \'Faint\': ', searchResults2 );
 
-searchInput3 = {};
-searchResults3 = search( searchInput3 );
 console.log( 'Testing search results for an empty input, should log the collection: ', searchResults3 );
 
 searchInput5 = { trackName: 'With You, Friends' };
 searchResults5 = search( searchInput5 );
 console.log( 'Testing search results with an unknown track, should be an empty array: ', searchResults5 );
+
+console.log( 'Test of empty search object, should log the collection contents: ', searchResults4 );
 // end tests of updated search function
 
-
-//UPDATE SHOWCOLLECTION FUNCTION PER README INSTRUCTIONS
