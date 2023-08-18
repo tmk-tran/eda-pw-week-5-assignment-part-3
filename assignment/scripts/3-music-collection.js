@@ -13,6 +13,8 @@ function addToCollection( title, artist, yearPublished, tracks ) {  // function 
     return newAlbum;
 }
 
+console.log( '~Testing addToCollection function, adding some albums to collection: ~' );
+
 let album1 = addToCollection(
     'Hybrid Theory',
     'Linkin Park',
@@ -40,14 +42,14 @@ let album6 = addToCollection( 'Scary Monsters and Nice Sprites', 'Skrillex', 201
 console.log( 'Album 6: ', album6 );
 
 let album7 = addToCollection( 'Meteora', 'Linkin Park', 2003 );
-console.log( 'Album 7 (extra): ', album7 );  // added another album to have multiple albums by same artist
+console.log( 'Album 7 (extra): ', album7 );  // added an extra album to have multiple albums by same artist
 
 console.log( 'The collection array contains: ', collection );  // printing the contents of the current collection
-
+console.log( '~End test of addToCollection~' );
 
 
 function showCollection( collection ) {  // function to display current collection info
-    console.log( 'The number of items in the collection is: ', collection.length );
+    console.log( 'The number of items in the collection is: ' + collection.length + ', and contains the following: ' );
 
     for( let album of collection ) {
         console.log( album.title + ', by ' + album.artist + '. Published in: ' + album.yearPublished )
@@ -63,9 +65,10 @@ function showCollection( collection ) {  // function to display current collecti
     }
 }
 
+
+console.log( '~Start of test, showCollection function: ~' );
 showCollection( collection );  // testing the showCollection function
-
-
+console.log( '~End of showCollection test' ); 
 
 function findByArtist( artist ) {
     const results = [];
@@ -83,6 +86,8 @@ function findByArtist( artist ) {
     return results;
 }
 
+
+console.log( '~Testing findByArtist function. Searching for: ~' );
 
 let artist1 = findByArtist( 'Skrillex' );  // testing artist known to be in array
 
@@ -153,6 +158,8 @@ console.log( 'Test of empty search object, the collection contains: ', searchRes
 let searchInput5 = { artist: 'Linkin Park', yearPublished: 2000 };  // testing an artist with multiple albums in collection
 let searchResults5 = search( searchInput5 );
 console.log( 'The album info is: ', searchResults5 );
+
+console.log( '~End of testing search function~' );
 
 
 // here, I wanted to test adding the tracks array using dot notation
