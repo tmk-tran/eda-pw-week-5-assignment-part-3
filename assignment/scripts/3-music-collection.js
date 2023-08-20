@@ -200,4 +200,3 @@ console.log( 'Search 4: Testing search results with an unknown track, should be 
 console.log( 'Test of empty search object, should log the collection contents: ', searchResults4 );
 console.log( '~End test of updated search function~' );
 // end tests of updated search function
-
