@@ -44,7 +44,7 @@ console.log( 'Album 6: ', album6 );
 let album7 = addToCollection( 'Meteora', 'Linkin Park', 2003 );
 console.log( 'Album 7 (extra): ', album7 );  // added an extra album to have multiple albums by same artist
 
-console.log( 'The collection array contains: ', collection );  // printing the contents of the current collection
+console.log( 'The collection contains: ', collection );  // printing the contents of the current collection
 console.log( '~End test of addToCollection~' );
 
 
@@ -95,6 +95,7 @@ let artist2 = findByArtist( 'Taylor Swift' );  //  shouldn't have this artist in
 
 let artist3 = findByArtist( 'Linkin Park' );  // testing multiple albums by same artist
 
+console.log( '~End findByArtist test~' );
 
 
 function search( searchInput ) {  // function called search that takes an input
@@ -140,26 +141,28 @@ function search( searchInput ) {  // function called search that takes an input
     return searchResults;
 }
 
+console.log( '~Begin searchInput function test~' );
+
 let searchInput = { artist: 'Ray Charles', yearPublished: 1957 };  // testing 'search' with info from README
 let searchResults1 = search( searchInput );  // should display message about no albums found
-console.log( 'The album info is: ', searchResults1 );  // should display an empty array
+console.log( 'Search result 1: The album info is: ', searchResults1 );  // should display an empty array
 
 let searchInput2 = { artist: 'Pink Floyd', yearPublished: 1973 };  // testing with an artist known to be in collection
 let searchResults2 = search( searchInput2 );
-console.log( 'The album info is: ', searchResults2 );  // should have a Pink Floyd album in array 
+console.log( 'Search result 2: The album info is: ', searchResults2 );  // should have a Pink Floyd album in array 
 
 let searchInput3 = {};  // testing with an empty search input
 let searchResults3 = search( searchInput3 );
-console.log( 'Test of empty search input, the collection contains: ', searchResults3 );  // should print the collection in console
+console.log( 'Search result 3: Test of empty search input, the collection contains: ', searchResults3 );  // should print the collection in console
 
 let searchResults4 = search();  // testing empty search object
-console.log( 'Test of empty search object, the collection contains: ', searchResults4 )  // should print the collection in console
+console.log( 'Search result 4: Test of empty search object, the collection contains: ', searchResults4 )  // should print the collection in console
 
 let searchInput5 = { artist: 'Linkin Park', yearPublished: 2000 };  // testing an artist with multiple albums in collection
 let searchResults5 = search( searchInput5 );
-console.log( 'The album info is: ', searchResults5 );
+console.log( 'Search result 5: The album info is: ', searchResults5 );
 
-console.log( '~End of testing search function~' );
+console.log( '~End of searchInput function test~' );
 
 
 // here, I wanted to test adding the tracks array using dot notation
@@ -178,20 +181,23 @@ console.log( 'Added a track to Album 7: ', album7 );
 
 
 // start test of updated search function
+console.log( '~Begin test of updated search function~' );
+
 searchInput = { trackName: 'C.R.E.A.M.' };
 searchResults1 = search( searchInput );
-console.log( 'Testing search results for track \'C.R.E.A.M.\': ', searchResults1 );
+console.log( 'Search 1: Testing search results for track \'C.R.E.A.M.\': ', searchResults1 );
 
 searchInput2 = { trackName: 'Faint' };
 searchResults2 = search( searchInput2 );
-console.log( 'Testing search results for track \'Faint\': ', searchResults2 );
+console.log( 'Search 2: Testing search results for track \'Faint\': ', searchResults2 );
 
 console.log( 'Testing search results for an empty input, should log the collection: ', searchResults3 );
 
-searchInput5 = { trackName: 'With You, Friends' };
+searchInput5 = { trackName: 'With You, Friends' };  // used searchInput 5 to leave searchInputs 3 and 4 in the original state
 searchResults5 = search( searchInput5 );
-console.log( 'Testing search results with an unknown track, should be an empty array: ', searchResults5 );
+console.log( 'Search 4: Testing search results with an unknown track, should be an empty array: ', searchResults5 );
 
 console.log( 'Test of empty search object, should log the collection contents: ', searchResults4 );
+console.log( '~End test of updated search function~' );
 // end tests of updated search function
 
